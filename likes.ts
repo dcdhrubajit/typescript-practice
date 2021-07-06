@@ -1,6 +1,4 @@
 export class Comment {
-    
-
     constructor( private commentId: number){
 
     }
@@ -22,3 +20,6 @@ let comment= new Comment(12);
 
 comment.displayComment();
 //edit
+
+
+

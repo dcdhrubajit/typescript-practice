@@ -1,32 +1,35 @@
-var UserAccount = /** @class */ (function () {
-    function UserAccount(_userId, _userName) {
-        this._userId = _userId;
-        this._userName = _userName;
-    }
-    Object.defineProperty(UserAccount.prototype, "userId", {
-        set: function (id) {
-            this._userId = id;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(UserAccount.prototype, "userName", {
-        get: function () {
-            return this._userName;
-        },
-        set: function (name) {
-            this._userName = name;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    UserAccount.prototype.display = function () {
-        console.log("User ID: " + this._userId + " Name: " + this._userName);
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
     };
-    return UserAccount;
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var Person = /** @class */ (function () {
+    function Person() {
+    }
+    Person.prototype.greet = function () {
+        console.log("Hello there");
+    };
+    return Person;
 }());
-var user1 = new UserAccount();
-user1.userId = 11;
-user1.userName = 'Dhrubajit';
-user1.display();
-console.log(user1.userName);
+var Programmer = /** @class */ (function (_super) {
+    __extends(Programmer, _super);
+    function Programmer() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Programmer.prototype.greet = function () {
+        console.log("Hello world");
+    };
+    return Programmer;
+}(Person));
+var p1 = new Programmer();
+p1.greet();
